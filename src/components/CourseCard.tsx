@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import { Course } from "@/data/courses";
 
-const CourseCard = ({ course }: { course: Course }) => (
+interface CourseCardProps {
+  course: Course;
+  showPrice?: boolean;
+}
+
+const CourseCard = ({ course, showPrice = true }: CourseCardProps) => (
   <Link
     to={`/courses/${course.id}`}
-    className="group block overflow-hidden rounded-lg bg-card shadow-card transition-all hover:shadow-soft hover:-translate-y-1"
+    className="group block overflow-hidden rounded-lg bg-card shadow-card transition-all hover:shadow-soft hover:-translate-y-1 animate-fade-in"
   >
     <div className="aspect-video overflow-hidden">
       <img
@@ -15,9 +20,11 @@ const CourseCard = ({ course }: { course: Course }) => (
       />
     </div>
     <div className="p-5">
-      <h3 className="font-heading text-lg font-semibold text-foreground">{course.title}</h3>
+      <h3 className="font-heading text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{course.title}</h3>
       <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{course.shortDescription}</p>
-      <p className="mt-3 text-lg font-bold text-primary">₹{course.price.toLocaleString("en-IN")}</p>
+      {showPrice && (
+        <p className="mt-3 text-lg font-bold text-primary">₹{course.price.toLocaleString("en-IN")}</p>
+      )}
     </div>
   </Link>
 );
