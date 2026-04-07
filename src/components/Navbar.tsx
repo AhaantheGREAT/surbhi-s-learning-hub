@@ -1,34 +1,28 @@
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import logo from "@/assets/logo.png";
+import logoDefault from "@/assets/logo.png";
 import { useState } from "react";
-
-const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/courses", label: "Courses" },
-  { to: "/about", label: "About Me" },
-  { to: "/testimonials", label: "Testimonials" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact Us" },
-];
+import { getNavItems, getSettings } from "@/hooks/useAdminData";
 
 const Navbar = () => {
   const { items } = useCart();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navItems = getNavItems().filter((n) => n.visible).sort((a, b) => a.order - b.order);
+  const settings = getSettings();
+  const logo = settings.logoUrl || logoDefault;
 
   return (
     <nav className="sticky top-0 z-50 gradient-gold shadow-soft">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Surbhi Surendra" className="h-10 w-10 rounded-full" />
-          <span className="font-heading text-xl font-bold text-primary-foreground">Surbhi Surendra</span>
+          <img src={logo} alt={settings.brandName} className="h-10 w-10 rounded-full" />
+          <span className="font-heading text-xl font-bold text-primary-foreground">{settings.brandName}</span>
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((l) => (
+          {navItems.map((l) => (
             <Link
               key={l.to}
               to={l.to}
@@ -49,16 +43,14 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-primary-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden gradient-gold px-4 pb-4 space-y-2">
-          {navLinks.map((l) => (
+          {navItems.map((l) => (
             <Link
               key={l.to}
               to={l.to}

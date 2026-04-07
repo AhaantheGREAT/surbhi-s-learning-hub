@@ -17,6 +17,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
+import CustomPage from "./pages/CustomPage";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/page/:id" element={<CustomPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

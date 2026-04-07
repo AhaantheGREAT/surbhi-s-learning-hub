@@ -1,11 +1,13 @@
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import { getSettings } from "@/hooks/useAdminData";
 import { useState } from "react";
 import { toast } from "sonner";
 import { addContact } from "@/hooks/useAdminData";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const settings = getSettings();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,9 +29,9 @@ const Contact = () => {
             <button type="submit" className="w-full rounded-lg gradient-gold py-3 font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]">Send Message</button>
           </form>
           <div className="mt-8 flex items-center justify-center gap-6">
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline font-semibold text-sm">WhatsApp</a>
-            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline font-semibold text-sm">Instagram</a>
-            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline font-semibold text-sm">YouTube</a>
+            {settings.whatsappUrl && <a href={settings.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline font-semibold text-sm">WhatsApp</a>}
+            {settings.instagramUrl && <a href={settings.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline font-semibold text-sm">Instagram</a>}
+            {settings.youtubeUrl && <a href={settings.youtubeUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline font-semibold text-sm">YouTube</a>}
           </div>
         </div>
       </section>
