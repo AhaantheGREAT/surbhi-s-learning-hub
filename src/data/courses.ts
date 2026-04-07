@@ -155,34 +155,21 @@ export const testimonials = [
 ];
 
 export const blogPosts = [
-  {
-    id: "1",
-    title: "5 Signs Your Chakras Are Blocked",
-    description: "Learn to identify the subtle signs that indicate energy blockages in your chakra system and what you can do about them.",
-    date: "March 15, 2026",
-  },
-  {
-    id: "2",
-    title: "The Power of Morning Affirmations",
-    description: "Discover how starting your day with positive affirmations can rewire your brain and transform your reality.",
-    date: "March 8, 2026",
-  },
-  {
-    id: "3",
-    title: "Beginner's Guide to Crystal Healing",
-    description: "Everything you need to know about choosing, cleansing, and using crystals for healing and manifestation.",
-    date: "February 28, 2026",
-  },
-  {
-    id: "4",
-    title: "Understanding Your Life Path Number",
-    description: "A deep dive into numerology's most important number and what it reveals about your purpose and destiny.",
-    date: "February 20, 2026",
-  },
-  {
-    id: "5",
-    title: "How Reiki Changed My Life",
-    description: "My personal journey with Reiki healing — from skeptic to certified practitioner and teacher.",
-    date: "February 10, 2026",
-  },
+  { id: "1", title: "5 Signs Your Chakras Are Blocked", description: "Learn to identify the subtle signs that indicate energy blockages in your chakra system and what you can do about them.", date: "March 15, 2026" },
+  { id: "2", title: "The Power of Morning Affirmations", description: "Discover how starting your day with positive affirmations can rewire your brain and transform your reality.", date: "March 8, 2026" },
+  { id: "3", title: "Beginner's Guide to Crystal Healing", description: "Everything you need to know about choosing, cleansing, and using crystals for healing and manifestation.", date: "February 28, 2026" },
+  { id: "4", title: "Understanding Your Life Path Number", description: "A deep dive into numerology's most important number and what it reveals about your purpose and destiny.", date: "February 20, 2026" },
+  { id: "5", title: "How Reiki Changed My Life", description: "My personal journey with Reiki healing — from skeptic to certified practitioner and teacher.", date: "February 10, 2026" },
 ];
+
+export const blogPostContent: Record<string, string> = {
+  "1": `Have you ever felt persistently drained, emotionally unstable, or physically unwell without a clear medical cause? These could be signs that your chakras — the energy centers in your body — are blocked.\n\nThe human body has seven main chakras, each governing different aspects of our physical, emotional, and spiritual well-being. When energy flows freely through these centers, we feel balanced and vibrant. But when one or more chakras become blocked, it can manifest in surprising ways.\n\nSign 1: Chronic fatigue despite adequate rest. When your root chakra is blocked, you may feel perpetually tired because your foundational energy is disrupted.\n\nSign 2: Difficulty expressing yourself. A blocked throat chakra can make communication feel impossible — you might struggle to speak your truth or feel a literal lump in your throat.\n\nSign 3: Inability to trust your intuition. When your third eye chakra is blocked, decision-making becomes agonizing because you've lost connection to your inner wisdom.\n\nSign 4: Emotional numbness or overwhelming emotions. Heart chakra blockages can swing you between feeling nothing and feeling everything too intensely.\n\nSign 5: Digestive issues and low self-esteem. Your solar plexus chakra governs both your digestive system and your sense of personal power.\n\nThe good news? Chakra blockages are not permanent. Through meditation, energy healing, yoga, and conscious awareness, you can restore the natural flow of energy in your body. Start by identifying which chakra resonates most with your symptoms, and begin your healing journey there.`,
+
+  "2": `The first thoughts you think each morning set the tone for your entire day. If you wake up with worry, stress, or negativity, your brain is already wired for a difficult day. But what if you could reprogram that pattern?\n\nMorning affirmations are positive, present-tense statements that you repeat to yourself upon waking. They work by leveraging neuroplasticity — your brain's ability to form new neural pathways through repetition.\n\nWhen you consistently tell yourself "I am worthy of abundance" or "I attract positive experiences," your subconscious mind begins to accept these statements as truth. Over time, your thoughts, behaviors, and even the opportunities you notice begin to align with these beliefs.\n\nHere's a simple morning affirmation practice to get started: Before reaching for your phone, sit up in bed and take three deep breaths. Then repeat 5-10 affirmations that resonate with your goals. Speak them aloud with conviction and emotion.\n\nSome powerful affirmations to try: "I am grateful for this new day and all the possibilities it holds." "I am confident, capable, and worthy of success." "Love flows to me and through me effortlessly." "I release all fear and embrace joy."\n\nConsistency is key. Practice daily for at least 21 days before judging results. Many of my students report significant shifts in their mindset, relationships, and opportunities within the first month.`,
+
+  "3": `Crystals have been used for healing and spiritual purposes for thousands of years across virtually every culture. From the ancient Egyptians who buried their dead with quartz to modern holistic practitioners, the belief in crystal energy has endured.\n\nBut how do you get started with crystal healing? It begins with choosing the right crystals.\n\nFor beginners, I recommend starting with these five essential crystals: Clear Quartz (the master healer, amplifies energy), Amethyst (calming, enhances intuition), Rose Quartz (opens the heart, promotes self-love), Black Tourmaline (protection, grounding), and Citrine (abundance, positivity).\n\nOnce you have your crystals, cleansing them is essential. Crystals absorb energy from their environment, so you want to clear any previous energy before using them. Methods include moonlight bathing (place under a full moon overnight), sage smudging, running water (not for all crystals), and sound cleansing with a singing bowl.\n\nTo use crystals for healing, you can meditate while holding them, place them on specific chakra points, carry them in your pocket throughout the day, or create a crystal grid in your home.\n\nRemember, crystals are tools that amplify your own intention and energy. They work best when combined with meditation, affirmation, and a genuine desire for healing and growth.`,
+
+  "4": `In numerology, your Life Path Number is the most significant number in your chart. It reveals your life's purpose, natural talents, and the challenges you'll face along the way.\n\nCalculating your Life Path Number is simple: reduce your birth date to a single digit. For example, if you were born on July 15, 1990: 7 + 1 + 5 + 1 + 9 + 9 + 0 = 32, then 3 + 2 = 5. Your Life Path Number would be 5.\n\nLife Path 1: The Leader. You're independent, ambitious, and innovative. Your challenge is learning to collaborate.\n\nLife Path 2: The Diplomat. You're sensitive, intuitive, and cooperative. Your challenge is setting boundaries.\n\nLife Path 3: The Communicator. You're creative, expressive, and joyful. Your challenge is focus and discipline.\n\nLife Path 4: The Builder. You're practical, reliable, and hardworking. Your challenge is flexibility.\n\nLife Path 5: The Adventurer. You're freedom-loving, adaptable, and curious. Your challenge is commitment.\n\nLife Path 6: The Nurturer. You're responsible, caring, and community-oriented. Your challenge is avoiding over-giving.\n\nLife Path 7: The Seeker. You're analytical, spiritual, and introspective. Your challenge is trusting others.\n\nLife Path 8: The Powerhouse. You're ambitious, authoritative, and material-focused. Your challenge is balancing material and spiritual.\n\nLife Path 9: The Humanitarian. You're compassionate, generous, and idealistic. Your challenge is letting go.\n\nUnderstanding your Life Path Number is just the beginning of your numerology journey, but it provides a powerful foundation for self-awareness and personal growth.`,
+
+  "5": `Five years ago, if you had told me I would become a certified Reiki practitioner and teacher, I would have laughed. I was the ultimate skeptic — a person who needed scientific proof for everything.\n\nMy journey began out of desperation. I was dealing with chronic back pain that no doctor could explain or resolve. A friend suggested I try Reiki, and with nothing to lose, I booked a session.\n\nDuring my first session, I felt warmth radiating from the practitioner's hands, even though they weren't touching me. I experienced a wave of emotion — tears I didn't expect, followed by a profound sense of peace. My pain, which had been constant for months, reduced by half after that single session.\n\nI was hooked. I enrolled in Reiki Level 1 training to understand what had happened to me. During the attunement ceremony, I felt energy coursing through my body unlike anything I'd ever experienced. It was as if a door had opened inside me that I never knew existed.\n\nLevel 2 training deepened my practice. I learned to send distance healing, use sacred symbols, and work with others. I started practicing on friends and family, and the results were remarkable — my mother's migraines decreased, my partner's anxiety improved, and my own chronic pain became a thing of the past.\n\nToday, I teach Reiki to hundreds of students, and each one's transformation reminds me of my own journey. Reiki didn't just heal my body — it changed my entire perspective on life, health, and what's possible when we open ourselves to energy healing.`,
+};

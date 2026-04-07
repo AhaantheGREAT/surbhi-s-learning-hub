@@ -18,7 +18,7 @@ const Index = () => {
         style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="absolute inset-0 bg-foreground/30" />
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 animate-fade-in">
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground drop-shadow-lg">
             Transform Your Life with<br />Surbhi Surendra
           </h1>
@@ -27,7 +27,7 @@ const Index = () => {
           </p>
           <Link
             to="/courses"
-            className="mt-8 inline-block rounded-lg gradient-gold px-8 py-3 font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-105"
+            className="mt-8 inline-block rounded-lg bg-accent px-8 py-3 font-semibold text-accent-foreground shadow-soft transition-transform hover:scale-105 hover:brightness-110"
           >
             Explore Courses
           </Link>
@@ -39,7 +39,7 @@ const Index = () => {
         <SectionHeading title="Our Courses" subtitle="Explore our transformative learning experiences" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {courses.slice(0, 3).map((c) => (
-            <CourseCard key={c.id} course={c} />
+            <CourseCard key={c.id} course={c} showPrice={false} />
           ))}
         </div>
         <div className="mt-8 text-center">
@@ -64,7 +64,7 @@ const Index = () => {
         <SectionHeading title="Top Trending Courses" subtitle="Our most popular courses loved by thousands" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {trendingCourses.map((c) => (
-            <CourseCard key={c.id} course={c} />
+            <CourseCard key={c.id} course={c} showPrice={false} />
           ))}
         </div>
       </section>

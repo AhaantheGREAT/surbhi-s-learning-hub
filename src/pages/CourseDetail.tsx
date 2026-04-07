@@ -33,15 +33,19 @@ const CourseDetail = () => {
         <div className="absolute inset-0 bg-foreground/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-4">
-            <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground">{course.title}</h1>
-            <p className="mt-2 text-xl text-primary-foreground font-bold">₹{course.price.toLocaleString("en-IN")}</p>
+            <h1 className="font-heading text-3xl md:text-5xl font-bold text-primary-foreground animate-fade-in">{course.title}</h1>
           </div>
         </div>
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        {/* Add to cart */}
-        <div className="mb-12 text-center">
+        {/* Price & Add to cart */}
+        <div className="mb-12 flex flex-col items-center gap-4 animate-fade-in">
+          <div className="inline-flex items-baseline gap-1">
+            <span className="text-sm text-muted-foreground font-medium">Starting at</span>
+            <span className="text-4xl font-bold text-primary">₹{course.price.toLocaleString("en-IN")}</span>
+          </div>
+          <p className="text-xs text-muted-foreground">One-time payment · Lifetime access</p>
           <button
             onClick={() => addToCart(course)}
             disabled={inCart}
