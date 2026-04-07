@@ -2,12 +2,14 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CourseCard from "@/components/CourseCard";
 import TestimonialCard from "@/components/TestimonialCard";
-import { courses, testimonials } from "@/data/courses";
+import { getCourses, getTestimonials } from "@/hooks/useAdminData";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import surbhiHero from "@/assets/surbhi-hero.jpg";
 
 const Index = () => {
+  const courses = getCourses();
+  const testimonials = getTestimonials();
   const trendingCourses = courses.filter((c) => c.trending);
 
   return (
