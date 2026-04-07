@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import SectionHeading from "@/components/SectionHeading";
-import { blogPosts, blogPostContent } from "@/data/courses";
+import { getBlogPosts, getBlogPostContent } from "@/hooks/useAdminData";
 
 const BlogPost = () => {
   const { id } = useParams();
+  const blogPosts = getBlogPosts();
+  const blogPostContent = getBlogPostContent();
   const post = blogPosts.find((p) => p.id === id);
 
   if (!post) {

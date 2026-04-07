@@ -2,12 +2,14 @@ import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import TestimonialCard from "@/components/TestimonialCard";
-import { courses, testimonials } from "@/data/courses";
+import { getCourses, getTestimonials } from "@/hooks/useAdminData";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart, Check } from "lucide-react";
 
 const CourseDetail = () => {
   const { id } = useParams();
+  const courses = getCourses();
+  const testimonials = getTestimonials();
   const course = courses.find((c) => c.id === id);
   const { addToCart, isInCart } = useCart();
 
@@ -27,7 +29,6 @@ const CourseDetail = () => {
 
   return (
     <Layout>
-      {/* Hero */}
       <section className="relative h-72 md:h-96 overflow-hidden">
         <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/50" />
@@ -39,7 +40,6 @@ const CourseDetail = () => {
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        {/* Price & Add to cart */}
         <div className="mb-12 flex flex-col items-center gap-4 animate-fade-in">
           <div className="inline-flex items-baseline gap-1">
             <span className="text-sm text-muted-foreground font-medium">Starting at</span>
@@ -57,25 +57,20 @@ const CourseDetail = () => {
           </button>
         </div>
 
-        {/* Description */}
         <section className="mb-12">
           <SectionHeading title="About This Course" />
           <p className="max-w-3xl mx-auto text-muted-foreground leading-relaxed text-center">{course.description}</p>
         </section>
 
-        {/* What You Get */}
         <section className="gradient-warm rounded-lg p-8 mb-12">
           <SectionHeading title="What You Will Get" />
           <ul className="max-w-xl mx-auto space-y-2">
             {course.whatYouGet.map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                <Check size={18} className="text-primary flex-shrink-0" /> {item}
-              </li>
+              <li key={i} className="flex items-center gap-3 text-muted-foreground"><Check size={18} className="text-primary flex-shrink-0" /> {item}</li>
             ))}
           </ul>
         </section>
 
-        {/* Benefits */}
         <section className="mb-12">
           <SectionHeading title="Benefits" />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
@@ -85,19 +80,15 @@ const CourseDetail = () => {
           </div>
         </section>
 
-        {/* What You Learn */}
         <section className="gradient-warm rounded-lg p-8 mb-12">
           <SectionHeading title="What You Will Learn" />
           <ul className="max-w-xl mx-auto space-y-2">
             {course.whatYouLearn.map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                <Check size={18} className="text-primary flex-shrink-0" /> {item}
-              </li>
+              <li key={i} className="flex items-center gap-3 text-muted-foreground"><Check size={18} className="text-primary flex-shrink-0" /> {item}</li>
             ))}
           </ul>
         </section>
 
-        {/* Testimonials */}
         {courseTestimonials.length > 0 && (
           <section className="mb-12">
             <SectionHeading title="Student Reviews" />
@@ -109,7 +100,6 @@ const CourseDetail = () => {
           </section>
         )}
 
-        {/* FAQs */}
         <section>
           <SectionHeading title="Frequently Asked Questions" />
           <div className="max-w-2xl mx-auto space-y-4">
