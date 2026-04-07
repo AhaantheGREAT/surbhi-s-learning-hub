@@ -18,7 +18,7 @@ const Index = () => {
         style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="absolute inset-0 bg-foreground/30" />
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 animate-fade-in">
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground drop-shadow-lg">
             Transform Your Life with<br />Surbhi Surendra
           </h1>
